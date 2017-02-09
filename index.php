@@ -43,5 +43,10 @@
 
     </form>
     </main>
+   <div style="position: relative">
+   <p style="position:fixed; bottom: 0; width:100%; text-align: center">This
+   calculation was done on <time datetime="2017-02-08">2/8/2017</time>.</p>
+
+   </div>
 </body>
 </html>

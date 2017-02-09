@@ -16,9 +16,13 @@
     } else if ( $interest_rate === FALSE )  {
         $error_message = 'Interest rate must be a valid number.'; 
     } else if ( $interest_rate <= 0 ) {
-        $error_message = 'Interest rate must be greater than zero.'; 
+        $error_message = 'Interest rate must be greater than zero.';
+    }
+    else if($interest_rate > 15){
+      $error_message  = 'Interest rate must be less than or euqal to 15';
+    }  
     // validate years
-    } else if ( $years === FALSE ) {
+     else if ( $years === FALSE ) {
         $error_message = 'Years must be a valid whole number.';
     } else if ( $years <= 0 ) {
         $error_message = 'Years must be greater than zero.';
@@ -45,6 +49,7 @@
     $investment_f = '$'.number_format($investment, 2);
     $yearly_rate_f = $interest_rate.'%';
     $future_value_f = '$'.number_format($future_value, 2);
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -53,7 +58,7 @@
     <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
-    <main>
+   <main>
         <h1>Future Value Calculator</h1>
 
         <label>Investment Amount:</label>
@@ -66,7 +71,10 @@
         <span><?php echo $years; ?></span><br>
 
         <label>Future Value:</label>
-        <span><?php echo $future_value_f; ?></span><br>
+        <span><?php echo $future_value_f; ?></span><br>	
     </main>
+     <div style="position: relative">
+        <p style="position:fixed; bottom: 0; width:100%; text-align: center">This
+	   calculation was done on <time datetime="2017-02-08">2/8/2017</time>.</p>
 </body>
 </html>
